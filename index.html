@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Send an anonymous complaint email to RTU and AICTE about college issues.">
+    <meta name="keywords" content="RTU, AICTE, College Complaint, Student Grievance, Raise Voice">
+    <meta name="author" content="Concerned Students">
+    <title>Raise Your Voice - Send Complaint Email to RTU & AICTE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            padding: 0 20px;
+            font-size: 2em;
+        }
+        #sendEmailButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #sendEmailButton:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            #sendEmailButton {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Raise Your Voice - Send Email to RTU & AICTE</h1>
+
+<button id="sendEmailButton">Send Email</button>
+
+<script>
+document.getElementById("sendEmailButton").addEventListener("click", function() {
+    const subjects = [
+        "Serious Grievances Regarding College Infrastructure and Management",
+        "Request for Immediate Action on College Issues",
+        "Complaint Regarding Poor Facilities and Mismanagement at College",
+        "Urgent Appeal to Inspect College Conditions"
+    ];
+    const bodies = [
+        `Dear Sir/Madam,
+
+Our college's condition is extremely poor. There is no sufficient staff, fees are being increased unfairly, there are no sports or extracurricular activities, the library does not have WiFi, toilets are unhygienic, drinking water facilities are inadequate, and lab systems are non-functional. Even the library computers do not work.
+
+The Director does not listen to student complaints, and when students collectively raise their concerns, false police complaints are filed against them.
+
+Kindly intervene and inspect the situation urgently.
+
+Regards,
+A Concerned Student`,
+
+        `Respected Authorities,
+
+I request your immediate attention to our college where the basic academic and hygiene standards are not maintained. Facilities like clean toilets, functional labs, drinking water, and a healthy environment are missing.
+
+Despite the lack of facilities, the management keeps increasing fees. No proper channels for student grievances are available. Students are harassed when they try to raise concerns.
+
+Please take strict action.
+
+Thank you.`,
+
+        `Hello Sir/Madam,
+
+The condition of our college is alarming. With no proper teaching staff, non-functional laboratories, no WiFi in the library, and absence of sports or extracurricular activities, the educational atmosphere is deteriorating.
+
+Complaints are ignored, and students face threats of false police cases if they come together to protest peacefully. Please intervene.
+
+Sincerely,
+A Student`
+    ];
+
+    const subject = subjects[Math.floor(Math.random() * subjects.length)];
+    const body = bodies[Math.floor(Math.random() * bodies.length)];
+    const mailtoLink = `mailto:registrar@rtu.ac.in,chairman@aicte-india.org?bcc=studentcomplaint230@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+});
+</script>
+
+</body>
+</html>
